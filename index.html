@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Romapsinfo - TikTok Map Gallery</title>
-  <!-- Modern Google Font -->
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -13,14 +13,15 @@
       margin: 0;
       padding: 0;
       text-align: center;
+      transition: all 0.3s ease;
     }
 
     header {
-      background-color: #ff0050;
       padding: 20px 0;
       font-size: 2.5em;
       font-weight: 600;
       letter-spacing: 1px;
+      background: linear-gradient(90deg, #ff6a00, #ee0979);
     }
 
     .channel {
@@ -35,11 +36,12 @@
       height: 100px;
       border-radius: 50%;
       margin-bottom: 10px;
-      border: 2px solid #ff0050;
+      border: 2px solid #ff6a00;
+      transition: all 0.3s ease;
     }
 
     .channel a {
-      color: #ff80ab;
+      color: #ffb347;
       text-decoration: none;
       font-weight: 600;
       font-size: 1.2em;
@@ -90,14 +92,58 @@
       font-size: 0.9em;
       color: #999;
     }
+
+    /* Black and white mode */
+    body.bw-mode {
+      background-color: #f5f5f5;
+      color: #000;
+    }
+
+    body.bw-mode .header {
+      background: #333 !important;
+    }
+
+    body.bw-mode .channel a {
+      color: #000;
+    }
+
+    body.bw-mode .map {
+      background: #fff;
+      color: #000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    body.bw-mode iframe {
+      filter: grayscale(100%);
+    }
+
+    /* Toggle button */
+    .toggle-bw {
+      margin: 10px;
+      padding: 8px 15px;
+      background-color: #ff6a00;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .toggle-bw:hover {
+      background-color: #ee0979;
+    }
+
   </style>
 </head>
 <body>
 
 <header>🗺️ Romapsinfo TikTok Map Gallery</header>
 
+<!-- Black & White Mode Toggle -->
+<button class="toggle-bw" onclick="document.body.classList.toggle('bw-mode')">Toggle B/W Mode</button>
+
 <div class="channel">
-  <!-- Replace "pfp-placeholder.jpg" with your TikTok profile picture -->
   <img src="sa.mr_op-e.jpeg" alt="TikTok Profile Picture">
   <a href="https://www.tiktok.com/@romaps._" target="_blank">@romaps._</a>
 </div>
@@ -133,7 +179,6 @@
 </div>
 
 <h2>Comments</h2>
-<!-- Utterances Comments Section -->
 <script src="https://utteranc.es/client.js"
         repo="romapsinfo/romapsinfo.github.io"
         issue-term="pathname"
